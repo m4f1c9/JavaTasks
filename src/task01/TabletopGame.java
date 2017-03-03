@@ -8,10 +8,6 @@ public class TabletopGame {
     List<String> players;
     String rules;
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     void startGame() {
         System.out.println(name + " началась");
     }
