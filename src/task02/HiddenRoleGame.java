@@ -1,5 +1,5 @@
 
-package task01;
+package task02;
 
 public class HiddenRoleGame extends TeamRolePlayingGame{
 
