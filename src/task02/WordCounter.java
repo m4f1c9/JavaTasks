@@ -2,14 +2,10 @@ package task02;
 
 public class WordCounter {
 
-    private int letterCount;
-    private int wordCount;
-    private boolean isWord;
-
     public void countWords(String in) {
-        letterCount = 0;
-        wordCount = 0;
-        isWord = false;
+        int letterCount = 0;
+        int wordCount = 0;
+        boolean isWord = false;
 
         for (int i = 0; i < in.length(); i++) {
             if (isletter(in.charAt(i))) {
