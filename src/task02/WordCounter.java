@@ -8,7 +8,7 @@ public class WordCounter {
         boolean isWord = false;
 
         for (int i = 0; i < in.length(); i++) {
-            if (isletter(in.charAt(i))) {
+            if (isLetter(in.charAt(i))) {
                 letterCount++;
                 isWord = true;
             } else if (isWord) {
@@ -26,7 +26,7 @@ public class WordCounter {
         System.out.println();
     }
 
-    private boolean isletter(char ch) {
+    private boolean isLetter(char ch) {
         switch (ch) {
             case ' ':
             case '\t':
