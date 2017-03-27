@@ -1,6 +1,8 @@
 package task05;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -23,8 +25,10 @@ public class MyFrame {
 
     public void showFrame() {
         JFrame frame = new JFrame("Простой графический интерфейс");
+        frame.setMinimumSize(new Dimension(500, 400));
 
-        JPanel firstPanel = new JPanel();
+        JPanel mainPanel = new JPanel(new BorderLayout(8, 8));
+        mainPanel.setBorder(BorderFactory.createEmptyBorder(8, 8, 8, 8));
 
         JPanel secondPanel = new JPanel();
         secondPanel.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.BLACK));
@@ -50,11 +54,9 @@ public class MyFrame {
 
         JPanel thirdPanel = new JPanel();
 
-        frame.add(firstPanel);
-
-        firstPanel.add(secondPanel);
-        firstPanel.add(scroll);
-        firstPanel.add(slider);
+        
+        
+        frame.setContentPane(mainPanel);
 
         secondPanel.add(button);
         secondPanel.add(countLebel);
@@ -67,15 +69,16 @@ public class MyFrame {
         thirdPanel.add(button2);
         thirdPanel.add(button3);
         thirdPanel.setLayout(new BoxLayout(thirdPanel, BoxLayout.Y_AXIS));
-        thirdPanel.setBorder(BorderFactory.createEmptyBorder(30, 70, 30, 30));
-        firstPanel.add(thirdPanel);
-        
-        
+        thirdPanel.setBorder(BorderFactory.createEmptyBorder(1, 1, 1, 10));
+
+        mainPanel.add(secondPanel, BorderLayout.NORTH);
+        mainPanel.add(scroll, BorderLayout.CENTER);
+        mainPanel.add(slider, BorderLayout.SOUTH);
+        mainPanel.add(thirdPanel, BorderLayout.EAST);
 
         frame.setLocationByPlatform(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(600, 300);
-        
         frame.setVisible(true);
 
     }
