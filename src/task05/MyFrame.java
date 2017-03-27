@@ -1,9 +1,11 @@
 package task05;
 
 import java.awt.Color;
+import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.BorderFactory;
+import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -64,7 +66,11 @@ public class MyFrame {
         thirdPanel.add(button1);
         thirdPanel.add(button2);
         thirdPanel.add(button3);
+        thirdPanel.setLayout(new BoxLayout(thirdPanel, BoxLayout.Y_AXIS));
+        thirdPanel.setBorder(BorderFactory.createEmptyBorder(30, 70, 30, 30));
         firstPanel.add(thirdPanel);
+        
+        
 
         frame.setLocationByPlatform(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
